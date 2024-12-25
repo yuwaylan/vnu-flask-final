@@ -1,1 +1,57 @@
-<h1>HIII</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>萬能科大登入頁面</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container vh-100 d-flex flex-column justify-content-center align-items-center">
+        <div class="text-center mb-5">
+            <h1 class="display-4">歡迎使用萬能科大資訊管理學系計算機概論期末考試系統</h1>
+        </div>
+        <div class="card shadow" style="width: 100%; max-width: 400px;">
+            <div class="card-body">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username">姓名</label>
+                        <input type="text" id="username" class="form-control" placeholder="請輸入帳號" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sid">學號</label>
+                        <input type="text" id="sid" class="form-control" placeholder="請輸入完整學號" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">密碼</label>
+                        <input type="password" id="password" class="form-control" placeholder="請輸入密碼" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">登入</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // 阻止表單的預設行為
+
+            const now = new Date();
+            const startTime = new Date('2024-01-08T09:00:00');
+            const endTime = new Date('2024-01-08T11:50:00');
+
+            if (now >= startTime && now <= endTime) {
+                window.location.href = 'https://www.google.com';
+            } else {
+                window.location.href = 'https://www.yahoo.com';
+            }
+        });
+    </script>
+</body>
+</html>
